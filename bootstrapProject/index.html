@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="config/bootstrap.min.css"/>
+    <script src="config/jquery-1.12.4.min.js"></script>
+    <script src="config/bootstrap.min.js"></script>
+</head>
+<style>
+    /*轮播图*/
+    .carousel {
+        height: 600px;
+        margin-bottom: 60px;
+    }
+    .carousel .item{
+        height: 600px;
+        background-color: #000;
+    }
+    .carousel .item img {
+        width: 100%;
+        background-size: cover;
+    }
+/*游戏背景*/
+    .summary .col-md-6{
+        margin-bottom: 20px;
+        text-align: center;
+        /*border: 1px solid red;*/
+    }
+    .summary .col-md-6 .text-left{
+        text-indent: 25px;
+    }
+    /*召唤师技能*/
+    .shanxian,.dianran,.zhiliao,.chuansong,.pingzhang,.chengjie,.xuruo{
+        /*border: 1px solid red;*/
+        padding-top:50px;
+        padding-left: 50px;
+    }
+    /*符文*/
+    .yinji,.fuyin,.diaowen,.jinghua{
+        padding-top:50px;
+        padding-left: 50px;
+    }
+
+
+
+</style>
+<body>
+<!-- 顶部导航 -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="menu-nav">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">英雄联盟</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#summary-container">游戏背景</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">游戏资料 <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#feature-tab">英雄</a></li>
+                        <li><a href="#feature-tab1">召唤师技能</a></li>
+                        <li><a href="#feature-tab2">符文</a></li>
+                        <li><a href="#feature-tab3">天赋</a></li>
+                    </ul>
+                </li>
+                <li><a href="#feature-tab4">周边</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#about-modal">关于我</a></li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+<!--轮播图-->
+<div id="ad-carousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#ad-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#ad-carousel" data-slide-to="1"></li>
+        <li data-target="#ad-carousel" data-slide-to="2"></li>
+        <li data-target="#ad-carousel" data-slide-to="3"></li>
+        <li data-target="#ad-carousel" data-slide-to="4"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="images/1.jpg" alt="1 slide">
+        </div>
+        <div class="item">
+            <img src="images/2.jpg" alt="2 slide">
+        </div>
+        <div class="item">
+            <img src="images/3.jpg" alt="3 slide">
+        </div>
+        <div class="item">
+            <img src="images/4.jpg" alt="4 slide">
+        </div>
+        <div class="item">
+            <img src="images/5.jpg" alt="5 slide">
+        </div>
+    </div>
+</div>
+<!--主要内容-->
+<div class="container summary">
+    <!-- 游戏背景 -->
+    <div class="row" id="summary-container">
+        <div class="col-md-6">
+            <img class="img-circle" src="images/6.jpg" alt="chrome">
+        </div>
+        <div class="col-md-6">
+            <h2><strong>什么是英雄联盟？</strong></h2>
+            <p class="text-left">
+             英雄联盟（League of Legends）是由美国Riot Games开发，腾讯游戏运营的全新英雄对战网游。英雄联盟的主创团队由各著名游戏公司的核心美术、策划、程序人员组成，他们打造了游戏中风格特色各异的英雄，加入更加丰富的物品合成系统、地图玩法、天梯匹配机制，以及独创的“召唤师”技能、符文、天赋组合，让玩家感受不一样的英雄对战网游。
+            </p>
+            <p class="text-left">
+             在游戏中，玩家将扮演一位召唤者，并选择你所信任的联盟国进入这个游戏的正义领域,为了控制瓦罗然的权利而奋战。在这个联盟中只有一条规则：胜者就是一切！
+            </p>
+            <p><a class="btn btn-default" href="http://lol.qq.com/download.shtml" role="button">英雄联盟下载DownLoad</a></p>
+        </div>
+    </div>
+    <!--英雄-->
+    <hr class="feature-divider">
+    <ul class="nav nav-tabs" role="tablist" id="feature-tab">
+        <li class="active"><a href="#tab-zhanshi" role="tab" data-toggle="tab">战士</a></li>
+        <li><a href="#tab-fashi" role="tab" data-toggle="tab">法师</a></li>
+        <li><a href="#tab-cike" role="tab" data-toggle="tab">刺客</a></li>
+        <li><a href="#tab-tanke" role="tab" data-toggle="tab">坦克</a></li>
+        <li><a href="#tab-sheshou" role="tab" data-toggle="tab">射手</a></li>
+        <li><a href="#tab-fuzhu" role="tab" data-toggle="tab">辅助</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab-zhanshi">
+            <div class="row feature">
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128848.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128849.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128850.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128851.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128852.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128854.png"></div>
+            </div>
+            <div class="row feature">
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128856.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128860.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128861.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128864.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128865.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128866.png"></div>
+            </div>
+            <div class="row feature">
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128870.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128871.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128876.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128877.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128878.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128879.png"></div>
+            </div>
+            <div class="row feature">
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128880.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128881.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128883.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128884.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128885.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128886.png"></div>
+            </div>
+            <div class="row feature">
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128887.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128888.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128923.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128924.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128927.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128928.png"></div>
+            </div>
+            <div class="row feature">
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128929.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128930.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128931.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128932.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128933.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128934.png"></div>
+            </div>
+            <div class="row feature">
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128936.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128938.png"></div>
+                <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128939.png"></div>
+            </div>
+
+        </div>
+        <div class="tab-pane" id="tab-fashi">
+            <div class="row feature">
+                <div class="row feature">
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128845.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128846.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128847.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128855.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128862.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128863.png"></div>
+                </div>
+                <div class="row feature">
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128882.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128913.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128920.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128921.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128944.png"></div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-cike">
+            <div class="row feature">
+                <div class="row feature">
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128850.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128851.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128852.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128865.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128866.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128873.png"></div>
+                </div>
+                <div class="row feature">
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128878.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128879.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128880.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128881.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128887.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128904.png"></div>
+                </div>
+                <div class="row feature">
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128933.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128934.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128936.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128940.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128941.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128942.png"></div>
+                </div>
+                <div class="row feature">
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128943.png"></div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-tanke">
+            <div class="row feature">
+                <div class="row feature">
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128848.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128849.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128867.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128875.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128905.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128908.png"></div>
+                </div>
+                <div class="row feature">
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128909.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128910.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128928.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128929.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128930.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128931.png"></div>
+                </div>
+                <div class="row feature">
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128932.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128938.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128939.png"></div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-sheshou">
+            <div class="row feature">
+                <div class="row feature">
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128869.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128906.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128907.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128911.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128916.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128917.png"></div>
+                </div>
+                <div class="row feature">
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128918.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128919.png"></div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-fuzhu">
+            <div class="row feature">
+                <div class="row feature">
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128845.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128846.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128847.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128862.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128863.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128867.png"></div>
+                </div>
+                <div class="row feature">
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128868.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128898.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128899.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128900.png"></div>
+                    <div class="col-md-2"><img class="feature-image img-responsive" src="img/1128901.png"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--召唤师技能-->
+    <hr class="feature-divider">
+    <ul class="nav nav-tabs" role="tablist" id="feature-tab1">
+        <li class="active"><a href="#tab-shanxian" role="tab" data-toggle="tab">闪现</a></li>
+        <li><a href="#tab-dianran" role="tab" data-toggle="tab">点燃</a></li>
+        <li><a href="#tab-zhiliao" role="tab" data-toggle="tab">治疗</a></li>
+        <li><a href="#tab-chuansong" role="tab" data-toggle="tab">传送</a></li>
+        <li><a href="#tab-pingzhang" role="tab" data-toggle="tab">屏障</a></li>
+        <li><a href="#tab-chengjie" role="tab" data-toggle="tab">惩戒</a></li>
+        <li><a href="#tab-xuruo" role="tab" data-toggle="tab">虚弱</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab-shanxian">
+            <div class="row feature shanxian">
+                <div class="col-md-4">
+                    <img class="feature-image img-responsive" src="image/1.jpg">
+                    <h2 class="feature-heading">闪现 <span class="text-muted">召唤师等级：8</span></h2>
+                    <p>使英雄朝着你的指针所停的区域瞬间传送一小段距离。</p>
+                </div>
+                <div class="col-md-8"><img class="feature-image img-responsive" src="image/1.1.jpg"></div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-dianran">
+            <div class="row feature">
+                <div class="row feature dianran">
+                    <div class="col-md-4">
+                        <img class="feature-image img-responsive" src="image/2.jpg">
+                        <h2 class="feature-heading">点燃 <span class="text-muted">召唤师等级：10</span></h2>
+                        <p>引燃是对单体敌方目标施放的持续性伤害技能，在5秒的持续时间里造成70-410（取决于英雄等级）真实伤害，获得目标的视野，并减少目标所受的治疗和回复效果。</p>
+                    </div>
+                    <div class="col-md-8"><img class="feature-image img-responsive" src="image/2.2.jpg"></div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-zhiliao">
+            <div class="row feature zhiliao">
+                <div class="row feature">
+                    <div class="col-md-4">
+                        <img class="feature-image img-responsive" src="image/3.jpg">
+                        <h2 class="feature-heading">治疗 <span class="text-muted">召唤师等级：1</span></h2>
+                        <p>为你和目标友军英雄回复95-345（取决于英雄等级）生命值，并为你和目标友军英雄提供30%移动速度加成，持续1秒。若目标近期已受到过其它治疗术的影响，则治疗术对目标产生的治疗效果减半。</p>
+                    </div>
+                    <div class="col-md-8"><img class="feature-image img-responsive" src="image/3.3.jpg"></div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-chuansong">
+            <div class="row feature chuansong">
+                <div class="row feature">
+                    <div class="col-md-4">
+                        <img class="feature-image img-responsive" src="image/4.jpg">
+                        <h2 class="feature-heading">传送 <span class="text-muted">召唤师等级：6</span></h2>
+                        <p>在引导4.5秒后，将英雄传送到友方建筑物、小兵或守卫旁边。</p>
+                    </div>
+                    <div class="col-md-8"><img class="feature-image img-responsive" src="image/4.4.jpg"></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-pingzhang">
+            <div class="row feature pingzhang">
+                <div class="row feature">
+                    <div class="col-md-4"><img class="feature-image img-responsive" src="image/5.jpg">
+                        <h2 class="feature-heading">屏障<span class="text-muted">召唤师等级：4</span></h2>
+                        <p>为你的英雄套上护盾，吸收115-455（取决于英雄等级）伤害，持续2秒。</p>
+                    </div>
+                    <div class="col-md-8"><img class="feature-image img-responsive" src="image/5.5.jpg"></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-chengjie">
+            <div class="row feature chengjie">
+                <div class="row feature">
+                    <div class="col-md-4">
+                        <img class="feature-image img-responsive" src="image/6.jpg">
+                        <h2 class="feature-heading">屏障<span class="text-muted">召唤师等级：10</span></h2>
+                        <p>对目标史诗野怪、大型野怪或敌方小兵造成390-1000（取决于英雄等级）真实伤害。在用在野怪身上时，回复一部分最大生命值。</p>
+                    </div>
+                    <div class="col-md-8"><img class="feature-image img-responsive" src="image/6.6.jpg"></div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-xuruo">
+            <div class="row feature xuruo">
+                <div class="row feature">
+                    <div class="col-md-4">
+                        <img class="feature-image img-responsive" src="image/7.jpg">
+                        <h2 class="feature-heading">虚弱<span class="text-muted">召唤师等级：4</span></h2>
+                        <p>虚弱目标敌方英雄，降低目标英雄30%的移动速度和攻击速度，以及10护甲与魔法抗性，并且他们所造成的伤害减少40%，持续2.5秒。</p>
+                    </div>
+                    <div class="col-md-8"><img class="feature-image img-responsive" src="image/7.7.jpg"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--符文-->
+    <hr class="feature-divider">
+    <ul class="nav nav-tabs" role="tablist" id="feature-tab2">
+        <li class="active"><a href="#tab-yinji" role="tab" data-toggle="tab">印记</a></li>
+        <li><a href="#tab-fuyin" role="tab" data-toggle="tab">符印</a></li>
+        <li><a href="#tab-diaowen" role="tab" data-toggle="tab">雕文</a></li>
+        <li><a href="#tab-jinghua" role="tab" data-toggle="tab">精华</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab-yinji">
+            <div class="row feature yinji">
+                <div class="col-md-12">
+                    <img class="feature-image img-responsive" src="image/8.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-fuyin">
+            <div class="row feature fuyin">
+                <div class="row feature">
+                    <div class="col-md-12">
+                        <img class="feature-image img-responsive" src="image/9.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-diaowen">
+            <div class="row feature diaowen">
+                <div class="row feature">
+                    <div class="col-md-12">
+                        <img class="feature-image img-responsive" src="image/10.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-jinghua">
+            <div class="row feature jinghua">
+                <div class="row feature">
+                    <div class="col-md-12">
+                        <img class="feature-image img-responsive" src="image/11.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--天赋-->
+    <hr class="feature-divider">
+    <div class="tab-content">
+        <div class="tab-pane active" id="feature-tab3">
+            <h1>天赋页</h1>
+            <div class="row feature">
+                <div class="col-md-12">
+                    <img class="feature-image img-responsive" src="image/12.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--周边-->
+    <hr class="feature-divider">
+    <div class="tab-content">
+        <div class="tab-pane active" id="feature-tab4">
+            <h1>手办</h1>
+            <div class="row feature">
+                <div class="col-md-4">
+                    <img class="feature-image img-responsive" src="image/17.jpg">
+                </div>
+                <div class="col-md-4">
+                    <img class="feature-image img-responsive" src="image/18.jpg">
+                </div>
+                <div class="col-md-4">
+                    <img class="feature-image img-responsive" src="image/19.jpg">
+                </div>
+            </div>
+            <h1>毛绒玩具</h1>
+            <div class="row feature">
+                <div class="col-md-4">
+                    <img class="feature-image img-responsive" src="image/13.jpg">
+                </div>
+                <div class="col-md-4">
+                    <img class="feature-image img-responsive" src="image/14.jpg">
+                </div>
+                <div class="col-md-4">
+                    <img class="feature-image img-responsive" src="image/15.jpg">
+                </div>
+            </div>
+            <div class="row feature">
+                <div class="col-md-4">
+                    <img class="feature-image img-responsive" src="image/16.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<!-- 关于 -->
+<div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="modal-label"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span
+                        aria-hidden="true">&times;</span><span class="sr-only">关闭</span>
+                </button>
+                <h4 class="modal-title" id="modal-label">关于我</h4>
+            </div>
+            <div class="modal-body">
+                <p>姓名:周冠宏</p>
+                <p>毕业学校:黑龙江大学</p>
+                <p>性别：男</p>
+                <p>生日：1994.10.06</p>
+                <p>微信：zgh19941006</p>
+                <p>QQ：505524193</p>
+                <p>手机号：15604601388</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">了解了</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
